@@ -8,6 +8,7 @@ import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { AlertTriangle, Bell, Phone, MessageSquare, CheckCircle, CalendarIcon, Filter, Download } from "lucide-react"
 import { format } from "date-fns"
+import { OccupancyCard } from "@/components/occupancy-card"
 
 const allEvents = [
   {
@@ -253,6 +254,8 @@ export default function ActivityFeedPage() {
             </div>
           </CardContent>
         </Card>
+
+        <OccupancyCard/>
       </div>
     </div>
   )

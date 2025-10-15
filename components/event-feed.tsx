@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { AlertTriangle, Bell, Phone, MessageSquare, CheckCircle } from "lucide-react"
+import { OccupancyCard } from "./occupancy-card"
 
 export function EventFeed() {
   const events = [
@@ -84,17 +85,28 @@ export function EventFeed() {
     <Card className="border-border shadow-sm h-full bg-white">
       <CardHeader>
         <CardTitle className="text-xl font-serif">Event Feed</CardTitle>
-        <p className="text-sm text-muted-foreground">Real-time system activity log</p>
+        <p className="text-sm text-muted-foreground">
+          Real-time system activity log
+        </p>
       </CardHeader>
       <CardContent>
         <div className="space-y-3 max-h-[800px] overflow-y-auto">
           {events.map((event, index) => (
-            <div key={index} className={`p-4 rounded-lg border ${getStatusColor(event.status)}`}>
+            <div
+              key={index}
+              className={`p-4 rounded-lg border ${getStatusColor(
+                event.status
+              )}`}
+            >
               <div className="flex items-start gap-3">
                 <div className="relative mt-1">
                   <div
-                    className={`w-2 h-2 rounded-full ${event.isLive ? "animate-pulse" : "bg-red-500"}`}
-                    style={event.isLive ? { backgroundColor: "#5C7F39" } : undefined}
+                    className={`w-2 h-2 rounded-full ${
+                      event.isLive ? "animate-pulse" : "bg-red-500"
+                    }`}
+                    style={
+                      event.isLive ? { backgroundColor: "#5C7F39" } : undefined
+                    }
                   />
                 </div>
                 <div className={`mt-0.5 ${getIconColor(event.status)}`}>
@@ -102,18 +114,25 @@ export function EventFeed() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-2 mb-1">
-                    <h4 className="font-semibold text-sm text-foreground">{event.title}</h4>
+                    <h4 className="font-semibold text-sm text-foreground">
+                      {event.title}
+                    </h4>
                     <Badge variant="outline" className="text-xs shrink-0">
                       {event.time}
                     </Badge>
                   </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{event.description}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {event.description}
+                  </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </CardContent>
+
+      {/* Monitoring Content */}
+      <OccupancyCard/>
     </Card>
-  )
+  );
 }

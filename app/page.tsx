@@ -1,10 +1,11 @@
-import { DashboardHeader } from "@/components/dashboard-header"
-import { AllergyBanner } from "@/components/allergy-banner"
-import { HealthSnapshot } from "@/components/health-snapshot"
-import { VitalsMicroTiles } from "@/components/vitals-micro-tiles"
-import { EventFeed } from "@/components/event-feed"
-import { MetricsGrid } from "@/components/metrics-grid"
-import { MedicationAcknowledgment } from "@/components/medication-acknowledgment"
+import { DashboardHeader } from "@/components/dashboard-header";
+import { AllergyBanner } from "@/components/allergy-banner";
+import { HealthSnapshot } from "@/components/health-snapshot";
+import { VitalsMicroTiles } from "@/components/vitals-micro-tiles";
+import { EventFeed } from "@/components/event-feed";
+import { OccupancyCard } from "@/components/occupancy-card";
+import { MetricsGrid } from "@/components/metrics-grid";
+import { MedicationAcknowledgment } from "@/components/medication-acknowledgment";
 
 export default function BettiDashboard() {
   return (
@@ -33,5 +34,5 @@ export default function BettiDashboard() {
         </div>
       </div>
     </div>
-  )
+  );
 }
