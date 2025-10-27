@@ -130,9 +130,6 @@ export function EventFeed() {
           ))}
         </div>
       </CardContent>
-
-      {/* Monitoring Content */}
-      <OccupancyCard/>
     </Card>
   );
 }

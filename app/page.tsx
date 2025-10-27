@@ -6,6 +6,7 @@ import { EventFeed } from "@/components/event-feed";
 import { OccupancyCard } from "@/components/occupancy-card";
 import { MetricsGrid } from "@/components/metrics-grid";
 import { MedicationAcknowledgment } from "@/components/medication-acknowledgment";
+import { MentalHealthCard } from "@/components/mental-health-card";
 
 export default function BettiDashboard() {
   return (
@@ -18,20 +19,29 @@ export default function BettiDashboard() {
         {/* Header Section */}
         <DashboardHeader />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
           {/* Left Column - Health Snapshot & Vitals */}
           <div className="lg:col-span-2 space-y-4 md:space-y-6">
             <HealthSnapshot />
             <VitalsMicroTiles />
-            <MedicationAcknowledgment />
-            <MetricsGrid />
+
+            <div className="grid gap-6 md:grid-cols-2 animate-in fade-in slide-in-from-top-4 duration-500 delay-300">
+              <MedicationAcknowledgment />
+              <MetricsGrid />
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 animate-in fade-in slide-in-from-top-4 duration-500 delay-300">
+              <OccupancyCard />
+              <MentalHealthCard />
+            </div>
           </div>
 
           {/* Right Column - Event Feed */}
-          <div className="lg:col-span-1">
+          {/* <div className="grid animate-in fade-in slide-in-from-top-4 duration-500 delay-300">
             <EventFeed />
-          </div>
+          </div> */}
         </div>
+        <EventFeed />
       </div>
     </div>
   );

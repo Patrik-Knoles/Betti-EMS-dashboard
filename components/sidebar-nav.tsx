@@ -8,6 +8,7 @@ import {
   Activity,
   Calendar,
   MessageSquare,
+  MapPin,
   TrendingUp,
   Settings,
   Heart,
@@ -16,6 +17,7 @@ import {
   Home,
   Menu,
   X,
+  Lock,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -36,6 +38,11 @@ const navItems = [
     icon: Activity,
   },
   {
+    title: "Monitoring",
+    href: "/occupancy",
+    icon: MapPin,
+  },
+  {
     title: "Communication",
     href: "/communication",
     icon: MessageSquare,
@@ -51,11 +58,16 @@ const navItems = [
     icon: TrendingUp,
   },
   {
+    title: "Security",
+    href: "/security",
+    icon: Lock,
+  },
+  {
     title: "Settings",
     href: "/settings",
     icon: Settings,
   },
-]
+];
 
 export function SidebarNav() {
   const pathname = usePathname()
